@@ -360,16 +360,9 @@ http://localhost:3000
 
 ---
 
-This project was collaboratively developed by:
-
-### 👨‍💻 Saurabh Kumar Jain
-
-### 👩‍💻 Shamma Garg
-
----
 ## 👨‍💻 Author
 
-### Saurabh Kumar Jain
+### Saurabh Kumar Jain &&  Shamma Garg
 
 - Full Stack Developer
 - MERN Stack Developer
