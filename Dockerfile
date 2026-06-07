@@ -14,6 +14,7 @@ FROM node:22-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV=production
+ARG MONGODB_URI
 ENV MONGODB_URI=$MONGODB_URI
 
 COPY --from=builder /app/.next/standalone ./
