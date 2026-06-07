@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "UniWallet",
-  description: "Author-Shamma Garg",
+  description: "Author-Shamma Garg && Saurabh kr jain",
 };
 
 export default function RootLayout({
