@@ -42,4 +42,5 @@ jobs:
             docker run -d \
               --name nextjs-app \
               -p 3000:3000 \
+              --env-file .env \
               ${{ secrets.DOCKER_USERNAME }}/my-nextjs-app:latest
