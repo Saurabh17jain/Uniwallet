@@ -1,36 +1,391 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💳 UniWallet
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+# 🚀 UniWallet – Real-Time Financial Dashboard
+
+### Track Markets • Analyze Charts • Manage Accounts • Automated Data Pipelines
+
+🌐 **Live Website:** https://uniwallet.tasksprint.online
+
+![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)
+![MongoDB](https://img.shields.io/badge/MongoDB-green?style=for-the-badge&logo=mongodb)
+![Docker](https://img.shields.io/badge/Docker-blue?style=for-the-badge&logo=docker)
+![Nginx](https://img.shields.io/badge/Nginx-green?style=for-the-badge&logo=nginx)
+![AWS EC2](https://img.shields.io/badge/AWS-EC2-orange?style=for-the-badge&logo=amazonaws)
+![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-black?style=for-the-badge&logo=githubactions)
+
+</div>
+
+---
+
+## 📖 Overview
+
+**UniWallet** is a production-grade financial dashboard built using **Next.js**, **MongoDB**, **Finnhub API**, **Inngest**, and **Dockerized cloud infrastructure**.
+
+The platform allows users to:
+
+- Create and manage accounts securely
+- Login and maintain authenticated sessions
+- View real-time stock market information
+- Analyze chart movements and market trends
+- Access financial data through a responsive dashboard
+- Receive continuously updated market information
+
+The application is fully containerized, automatically deployed through GitHub Actions, and hosted on AWS EC2 behind an Nginx reverse proxy.
+
+---
+
+## ✨ Features
+
+### 🔐 Authentication
+
+- User Registration
+- User Login
+- Session Management
+- Protected Routes
+- Secure Authentication Flow
+
+### 📈 Market Dashboard
+
+- Real-Time Stock Data
+- Interactive Charts
+- Live Market Updates
+- Financial Analytics
+- Responsive Dashboard UI
+
+### ⚡ Event-Driven Architecture
+
+- Inngest Workflows
+- Background Processing
+- Automated Event Handling
+- Reliable Data Synchronization
+
+### 🗄️ Database
+
+- MongoDB Atlas
+- Mongoose ODM
+- Optimized Queries
+- Scalable Architecture
+
+### 🚀 DevOps
+
+- Dockerized Deployment
+- GitHub Actions CI/CD
+- AWS EC2 Hosting
+- Nginx Reverse Proxy
+- Automated Production Deployments
+
+---
+
+## 🏗️ System Architecture
+
+```text
+                   ┌─────────────────────┐
+                   │     User Browser    │
+                   └──────────┬──────────┘
+                              │
+                              ▼
+                   ┌─────────────────────┐
+                   │       Nginx         │
+                   │ Reverse Proxy Layer │
+                   └──────────┬──────────┘
+                              │
+                              ▼
+                   ┌─────────────────────┐
+                   │     Next.js App     │
+                   │    Dockerized       │
+                   └───────┬─────────────┘
+                           │
+         ┌─────────────────┼─────────────────┐
+         ▼                 ▼                 ▼
+
+  ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
+  │ MongoDB     │   │ Finnhub API │   │   Inngest   │
+  │ Atlas       │   │ Market Data │   │ Workflows   │
+  └─────────────┘   └─────────────┘   └─────────────┘
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- Next.js 15
+- React.js
+- TypeScript
+- Tailwind CSS
+
+### Backend
+
+- Next.js API Routes
+- Node.js
+- Better Auth
+- Mongoose
+
+### Database
+
+- MongoDB Atlas
+
+### APIs & Services
+
+- Finnhub API
+- Gemini API
+- Nodemailer
+- Inngest
+
+### DevOps & Infrastructure
+
+- Docker
+- GitHub Actions
+- AWS EC2
+- Nginx
+
+---
+
+## 🚀 CI/CD Pipeline
+
+The project follows a complete CI/CD workflow using GitHub Actions.
+
+### Pipeline Flow
+
+```text
+Developer Pushes Code
+          │
+          ▼
+GitHub Repository
+          │
+          ▼
+GitHub Actions
+          │
+          ▼
+Docker Image Build
+          │
+          ▼
+DockerHub Push
+          │
+          ▼
+SSH Into EC2
+          │
+          ▼
+Pull Latest Image
+          │
+          ▼
+Restart Container
+          │
+          ▼
+Production Updated
+```
+
+### Automated Workflow
+
+✅ Docker Build
+
+✅ Docker Push
+
+✅ SSH Deployment
+
+✅ EC2 Update
+
+✅ Container Restart
+
+✅ Zero Manual Deployment
+
+---
+
+## 🐳 Docker Deployment
+
+### Pull Image
+
+```bash
+docker pull <dockerhub-username>/my-nextjs-app:latest
+```
+
+### Create Environment File
+
+```bash
+nano .env
+```
+
+### Add Variables
+
+```env
+NEXT_PUBLIC_BASE_URL=
+
+MONGODB_URI=
+
+BETTER_AUTH_SECRET=
+
+BETTER_AUTH_URL=
+
+GEMINI_API_KEY=
+
+NODEMAILER_EMAIL=
+
+NODEMAILER_PASSWORD=
+
+NEXT_PUBLIC_FINNHUB_API_KEY=
+```
+
+### Run Container
+
+```bash
+docker run -d \
+--name uniwallet \
+-p 3000:3000 \
+--env-file .env \
+<dockerhub-username>/my-nextjs-app:latest
+```
+
+---
+
+## ⚙️ Local Development Setup
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Saurabh17jain/Uniwallet.git
+
+cd Uniwallet
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Create Environment Variables
+
+Create:
+
+```bash
+.env.local
+```
+
+Add:
+
+```env
+NEXT_PUBLIC_BASE_URL=
+
+MONGODB_URI=
+
+BETTER_AUTH_SECRET=
+
+BETTER_AUTH_URL=
+
+GEMINI_API_KEY=
+
+NODEMAILER_EMAIL=
+
+NODEMAILER_PASSWORD=
+
+NEXT_PUBLIC_FINNHUB_API_KEY=
+```
+
+### Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🌍 Production Infrastructure
 
-To learn more about Next.js, take a look at the following resources:
+| Service | Purpose |
+|----------|----------|
+| AWS EC2 | Hosting |
+| Docker | Containerization |
+| Nginx | Reverse Proxy |
+| GitHub Actions | CI/CD |
+| MongoDB Atlas | Database |
+| Finnhub API | Market Data |
+| Inngest | Background Jobs |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📊 Key Highlights
 
-## Deploy on Vercel
+### 🚀 Engineering
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Built 10+ RESTful APIs
+- Implemented scalable full-stack architecture
+- Automated deployment workflow
+- Dockerized production environment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📈 Financial Analytics
+
+- Real-time stock information
+- Interactive market dashboards
+- Live chart monitoring
+- Continuous market updates
+
+### 🔒 Security
+
+- Secure authentication
+- Environment-based configuration
+- Session management
+- Protected routes
+
+### ⚙️ Scalability
+
+- Event-driven workflows
+- Background job processing
+- Cloud-native deployment
+- Containerized infrastructure
+
+---
+
+## 💼 Resume Highlights
+
+### UniWallet | Jan 2025 – Feb 2025
+
+**Tech Stack:** Next.js, MongoDB, Finnhub API, Inngest, React.js
+
+- Designed and implemented a full-stack financial dashboard enabling real-time market monitoring and analysis.
+- Built and integrated **10+ RESTful APIs** to facilitate high-performance communication between frontend and backend services.
+- Developed a scalable event-driven architecture using **Inngest** for workflow orchestration and automated background processing.
+- Integrated **Finnhub API** to provide live stock market data and real-time chart updates.
+- Containerized the application using **Docker** and deployed it on **AWS EC2** behind an **Nginx Reverse Proxy**.
+- Implemented a complete **CI/CD pipeline using GitHub Actions**, enabling automated deployments on every push to the main branch.
+
+---
+
+This project was collaboratively developed by:
+
+### 👨‍💻 Saurabh Kumar Jain
+
+### 👩‍💻 Shamma Garg
+
+---
+## 👨‍💻 Author
+
+### Saurabh Kumar Jain
+
+- Full Stack Developer
+- MERN Stack Developer
+- DevOps Enthusiast
+- Cloud & Deployment Engineer
+
+### Connect
+
+- GitHub: https://github.com/Saurabh17jain
+
+---
+
+<div align="center">
+
+### ⭐ Star this repository if you found it useful.
+
+Built with ❤️ using Next.js, MongoDB, Docker, AWS EC2, Nginx, Inngest and Finnhub API.
+
+</div>
