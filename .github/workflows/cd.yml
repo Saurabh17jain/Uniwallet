@@ -42,8 +42,9 @@ jobs:
             sudo docker rm nextjs-app || true
 
             sudo docker run -d \
-            -e NEW_RELIC_LICENSE_KEY=${{secrets.NEW_RELIC_LICENSE_KEY}} \
+            --name nextjs-app \
+            -e NEW_RELIC_LICENSE_KEY=${{ secrets.NEW_RELIC_LICENSE_KEY }} \
             -e NEW_RELIC_APP_NAME="uniwallet" \
-             -p 3000:3000 \
+            -p 3000:3000 \
             --env-file .env \
-            my-nextjs-app:latest
+            ${{ secrets.DOCKER_USERNAME }}/my-nextjs-app:latest
